@@ -53,33 +53,36 @@
     </div>
   </section>
 
-  <main>
-    <!-- "Who We Are" Section -->
-    <section id="who-we-are" class="font-['Source_Code_Pro'] scroll-mt-72 text-center text-white">
+<main>
+  <!-- "Who We Are" Section -->
+  <section id="who-we-are" class="font-['Source_Code_Pro'] scroll-mt-72 text-center text-white mt-8">
+    <div
+      class="ml-16 mr-16 mt-16 p-16 bg-gradient-to-b from-gray-800 to-black p-8 rounded-lg shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+    >
       <header class="text-2xl font-bold mb-4">
-        <br>
+        <br />
         Cyberbirds: Who We Are
       </header>
       <div id="typed-content"></div>
       <script>
         const codeText = `
-We are a student organization funded by the Johns Hopkins CS Department, launching in Spring 2025.
-
-Our Mission: Serve as a hub for undergraduate students passionate about cybersecurity.
-
-Educational Focuses: Networks, Firewalls, Penetration Testing, Cryptology, and Computer Engineering.
-
-Main Events:
-  - Capture the Flag Competitions: Hands-on challenges to test and enhance skills.
-  - Member Project Showcases: Highlighting innovative student-led cybersecurity projects.
-  - Professional Seminars: Talks and workshops by industry-leading firms such as Palo Alto Networks and Harbor Labs.
-
-Current Objectives: Growing our internship funnel with local cybersecurity firms to allow members to further pursue cyber interests.
-`;
-
+  We are a student organization funded by the Johns Hopkins CS Department, launching in Spring 2025.
+  
+  Our Mission: Serve as a hub for undergraduate students passionate about cybersecurity.
+  
+  Educational Focuses: Networks, Firewalls, Penetration Testing, Cryptology, and Computer Engineering.
+  
+  Main Events:
+    - Capture the Flag Competitions: Hands-on challenges to test and enhance skills.
+    - Member Project Showcases: Highlighting innovative student-led cybersecurity projects.
+    - Professional Seminars: Talks and workshops by industry-leading firms such as Palo Alto Networks and Harbor Labs.
+  
+  Current Objectives: Growing our internship funnel with local cybersecurity firms to allow members to further pursue cyber interests.
+  `;
+  
         const typedContent = document.getElementById('typed-content');
         let index = 0;
-
+  
         function typeCode() {
           if (index < codeText.length) {
             const char = codeText[index];
@@ -88,11 +91,13 @@ Current Objectives: Growing our internship funnel with local cybersecurity firms
             setTimeout(typeCode, 10);
           }
         }
-
+  
         typeCode();
       </script>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
+
   
 
       <!-- FAQ Section -->
