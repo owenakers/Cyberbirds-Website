@@ -46,3 +46,5 @@ function toggleFAQ(button) {
     icon.classList.remove("rotate-180");
   }
 }
+
+
