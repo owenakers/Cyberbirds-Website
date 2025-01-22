@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Cyberbirds | Johns Hopkins</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyberbirds | Johns Hopkins</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    #typed-content {
+      color: lightgreen;
+      font-family: 'Source Code Pro', monospace;
+      white-space: pre-wrap;
+      overflow: visible; /* Remove scroll */
+    }
+  </style>
 </head>
-<body class="font-mono bg-black text-gray-800 ">
-
+<body class="font-mono bg-black text-gray-800 pt-16">
   <!-- Blue Header -->
-  <header class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-300 to-gray-900 py-4 z-50 slide-in shadow-md shadow-black">
-    <div class="max-w-full flex items-center px-4">
+  <header class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-300 to-gray-900 h-16 z-50 slide-in shadow-md shadow-black">
+    <div class="max-w-full flex items-center px-4 h-full">
       <!-- Logo and Title -->
       <div class="flex items-center">
         <img class="h-12" src="icons/Johns-Hopkins-University-Symbol.png" alt="JHU Logo">
@@ -21,7 +26,6 @@
           <h1 class="text-2xl text-white font-bold ml-4">Johns Hopkins University</h1>
         </a>
       </div>
-  
       <!-- Navigation Links -->
       <nav class="space-x-6 flex ml-auto items-center text-white font-bold text-lg">
         <a href="#who-we-are" class="hover:underline">Who We Are</a>
@@ -30,61 +34,66 @@
       </nav>
     </div>
   </header>
-  
 
   <!-- Full-Screen GIF Background Section -->
   <section class="relative h-screen flex items-center justify-center">
-    <!-- Full-Screen Background GIF -->
-    <img 
-      class="absolute inset-0 w-full h-full object-cover opacity-100 fade-in"
-      src="images/Hacker.gif" 
-      alt="Hacker GIF">
-    
-    <!-- Overlay Content -->
+    <img class="absolute inset-0 w-full h-full object-cover opacity-100 fade-in" src="images/Hacker.gif" alt="Hacker GIF">
     <div class="relative z-10 text-center">
-      <!-- Large Circular Image -->
-
-
-      <!-- Text Content Below Logo -->
       <div class="mt-4 z-20">
         <h2 class="text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-blue-900" style="text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.7);">
           CYBERBIRDS
         </h2>
         <p class="text-white text-2xl mt-4"> - At Johns Hopkins University - </p>
       </div>
-
       <div class="w-6/12 h-auto mx-auto rounded-full overflow-hidden">
-        <a href="https://www.instagram.com/jhu_cyberbirds/ ">
-          <img 
-          src="icons/cyber_bird.png" 
-          alt="Circular Image" 
-          class="fade-in w-full h-full object-cover"
-          />
+        <a href="https://www.instagram.com/jhu_cyberbirds/">
+          <img src="icons/cyber_bird.png" alt="Circular Image" class="fade-in w-full h-full object-cover" />
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Main Content -->
+  <main>
+    <!-- "Who We Are" Section -->
+    <section id="who-we-are" class="font-['Source_Code_Pro'] scroll-mt-72 text-center text-white">
+      <header class="text-2xl font-bold mb-4">
+        <br>
+        Cyberbirds: Who We Are
+      </header>
+      <div id="typed-content"></div>
+      <script>
+        const codeText = `
+We are a student organization funded by the Johns Hopkins CS Department, launching in Spring 2025.
 
-  <main class="bg-black">
-    <section id="who-we-are" class="bg-black bg-cover bg-center font-['Source_Code_Pro'] scroll-mt-72">
-        <div 
-          class="w-full h-[50vh] bg-gradient-to-b from-black via-teal-600 to-black flex flex-col items-center justify-center text-white font-bold text-xl p-24 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl"
-        >
-          <!-- Header with Animation -->
-          <!-- Description -->
-          <p 
-            class="text-center text-white text-lg animate-fade-in"
-          >
-            Cyberbirds is a student-led club <span class="font-extrabold">starting in the Spring of 2025</span> that aims to provide and study the tools used in the field of Cybersecurity. We will implement
-            Hands-on activities that will cover topics such as networks, firewalls, penetration testing, cryptology, and more. 
-            We will also be hosting Capture the Flag competitions and eventually create an internship funnel for our members. 
-          </p>
-          <p class="mt-8 text-4xl">Thank you for checking us out!</p>
-        </div>
+Our Mission: Serve as a hub for undergraduate students passionate about cybersecurity.
+
+Educational Focuses: Networks, Firewalls, Penetration Testing, Cryptology, and Computer Engineering.
+
+Main Events:
+  - Capture the Flag Competitions: Hands-on challenges to test and enhance skills.
+  - Member Project Showcases: Highlighting innovative student-led cybersecurity projects.
+  - Professional Seminars: Talks and workshops by industry-leading firms such as Palo Alto Networks and Harbor Labs.
+
+Current Objectives: Growing our internship funnel with local cybersecurity firms to allow members to further pursue cyber interests.
+`;
+
+        const typedContent = document.getElementById('typed-content');
+        let index = 0;
+
+        function typeCode() {
+          if (index < codeText.length) {
+            const char = codeText[index];
+            typedContent.textContent += char;
+            index++;
+            setTimeout(typeCode, 10);
+          }
+        }
+
+        typeCode();
+      </script>
     </section>
   </main>
+  
 
       <!-- FAQ Section -->
       <section id="faq" class="bg-black text-white py-12 mt-24 mb-24 scroll-mt-72">
@@ -99,7 +108,7 @@
                 class="w-full flex justify-between items-center text-lg font-bold focus:outline-none focus:ring-2 focus:ring-teal-500"
                 onclick="toggleFAQ(this)"
               >
-                <span>What even is Cybersecurity and why is it worth my time?</span>
+                <span>Will I learn how to hack a device?</span>
                 <svg
                   class="w-6 h-6 text-teal-400 transform transition-transform"
                   xmlns="http://www.w3.org/2000/svg"
@@ -117,13 +126,7 @@
               </button>
               <div class="mt-4 hidden">
                 <p>
-                  Cybersecurity is the practice of protecting systems, networks, devices, and data from unauthorized access, theft, damage, or disruption. It involves a range of techniques, tools, and practices designed to safeguard sensitive information, ensure privacy, and maintain the integrity of digital operations.
-                </p>
-                <p class="mt-3">
-                  Cybersecurity is one of the most rapidly-growing fields. Skilled professionals
-                  are in high demand, and with this comes job security and attractive salaries. There
-                  are many different carrer paths that take place all over the world which allows
-                  a plethora of opportunities.
+                  Cyberbirds is an educational club designed to teach penetration testing skills while drawing a clear line at legal barrieres. This means that students will be equipped with the knowledge to perform basic hacks, but should follow all ethical guidelines involved in cybersecurity protocols. 
                 </p>
               </div>
             </div>
@@ -151,7 +154,7 @@
               </button>
               <div class="mt-4 hidden">
                 <p>
-                  No! Anyone with an interest in cybersecurity is welcome to join! No prior experience is required.
+                  No! Anyone with an interest in cybersecurity is welcome to join! We will begin teaching material from scratch, and more experienced students will have faster learning opportunities along with CTF collaborations.
                 </p>
               </div>
             </div>
@@ -161,7 +164,7 @@
                 class="w-full flex justify-between items-center text-lg font-bold focus:outline-none focus:ring-2 focus:ring-teal-500"
                 onclick="toggleFAQ(this)"
               >
-                <span>What if I want an officer position?</span>
+                <span>What is the structure of learning the topics?</span>
                 <svg
                   class="w-6 h-6 text-teal-400 transform transition-transform"
                   xmlns="http://www.w3.org/2000/svg"
@@ -179,9 +182,7 @@
               </button>
               <div class="mt-4 hidden">
                 <p>
-                  If our club continues to scale, we will
-                  definitely offer more officer positions. Reach out to any of the current
-                  officers for any questions/suggestions.
+                  Our covered topics begin with network fundamentals, moving to computer engineering, and finally cybersecurity and cryptology. The programming languages used will be Bash, Python, HTML, and PHP.
                 </p>
               </div>
             </div>
@@ -204,8 +205,15 @@
           <p 
             class="text-center leading-relaxed text-white text-lg animate-fade-in mb-8"
           >
-            Do you want to be equipped with the tools needed to explore the world of cybersecurity? Sign up today and become part of a community dedicated to learning, innovation, and hands-on problem-solving. 
-            Together, we'll tackle exciting challenges and learn to ethically hack!
+            Are you ready to gain the skills needed to navigate the dynamic field of cybersecurity? Join us today and become part of a community committed to learning, innovation, and practical problem-solving. Together, we’ll tackle challenges and explore the world of ethical hacking!
+
+
+
+
+
+
+
+
           </p>
         </div>
   
