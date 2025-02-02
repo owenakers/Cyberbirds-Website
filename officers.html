@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberbirds Officers | Johns Hopkins</title>
+    <link rel="shortcut icon" type="image/png" href="icons/cyber_bird.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Specific Styles for This Page -->
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Source Code Pro', monospace;
+        }
+        .profile {
+            background-color: #1a1a1a;
+            border: 2px solid #00ff00;
+            padding: 20px;
+            margin: 20px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .profile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.8);
+        }
+        .profile img {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid #00ff00;
+        }
+        .name {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #00ff00;
+            margin-top: 10px;
+        }
+        .position {
+            font-size: 1.2em;
+            color: #ff0000;
+            margin-top: 5px;
+        }
+        .bio {
+            margin-top: 10px;
+            color: #cccccc;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body class="font-mono">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-300 to-gray-900 h-16 z-50 shadow-md shadow-black">
+        <div class="max-w-full flex items-center px-4 h-full">
+            <!-- Logo and Title -->
+            <div class="flex items-center">
+                <img class="h-12" src="icons/Johns-Hopkins-University-Symbol.png" alt="JHU Logo">
+                <a href="https://www.jhu.edu/" target="_blank">
+                    <h1 class="text-2xl text-white font-bold ml-4">Johns Hopkins University</h1>
+                </a>
+            </div>
+            <!-- Navigation Links -->
+            <nav class="space-x-6 flex ml-auto items-center text-white font-bold text-lg">
+                <a href="index.html" class="hover:underline mr-4">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-12 px-8">
+        <!-- Page Title -->
+        <h1 class="text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-green-300 to-blue-900 text-transparent bg-clip-text">
+            Cyberbirds Officers 2025
+        </h1>
+
+        <!-- Officer Profiles -->
+        <div class="container mx-auto flex flex-wrap justify-center">
+            <!-- President -->
+            <div class="profile">
+                <img src="placeholder.jpg" alt="">
+                <div class="name">Roshan Amble</div>
+                <div class="position">President</div>
+                <div class="bio">An experienced ethical hacker dedicated to protecting digital assets and fighting cyber threats.</div>
+            </div>
+
+            <!-- Vice President -->
+            <div class="profile">
+                <img src="placeholder.jpg" alt="">
+                <div class="name">Alexis Cao</div>
+                <div class="position">Vice President</div>
+                <div class="bio">A cybersecurity expert specializing in penetration testing and network security.</div>
+            </div>
+
+            <!-- Treasurer -->
+            <div class="profile">
+                <img src="placeholder.jpg" alt="">
+                <div class="name">Eli Gitter-Dentz</div>
+                <div class="position">Treasurer</div>
+                <div class="bio">A cybersecurity specialist skilled in digital forensics, threat analysis, and vulnerability assessment.</div>
+            </div>
+
+            <!-- Secretary -->
+            <div class="profile">
+                <img src="placeholder.jpg" alt="">
+                <div class="name">Owen Akers</div>
+                <div class="position">Secretary</div>
+                <div class="bio">A cybersecurity expert proficient in ethical hacking, incident response, and risk mitigation.</div>
+            </div>
+
+            <!-- Add more profiles as needed -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 to-blue-300 text-white font-extrabold text-center py-8 flex justify-between items-center px-12">
+        <div>
+            <img class="w-24 h-24" src="icons/cyber_bird.png" alt="Cyberbirds Logo">
+        </div>
+        <div>
+            <p class="text-xl">&copy; 2025 Johns Hopkins Cyberbirds</p>
+        </div>
+        <div class="flex flex-col items-center">
+            <div class="mb-2">Follow Us</div>
+            <a href="https://www.instagram.com/jhu_cyberbirds/" target="_blank">
+                <img class="w-12 h-12" src="icons/Instagram_icon.png.webp" alt="Instagram Icon">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
