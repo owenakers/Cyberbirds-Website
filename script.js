@@ -47,4 +47,3 @@ function toggleFAQ(button) {
   }
 }
 
-

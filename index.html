@@ -3,54 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cyberbirds | Johns Hopkins</title>
+  <title>Cyberbirds | Johns Hopkins University</title>
   <link rel="shortcut icon" type="image/png" href="icons/cyber_bird.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
-
-<body class="font-mono bg-black text-gray-800 pt-16">
-  <!-- Blue Header -->
+<body class="font-mono bg-black text-gray-100">
+  <!-- Header -->
   <header class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-300 to-gray-900 h-16 z-50 shadow-md shadow-black">
     <div class="max-w-full flex items-center px-4 h-full">
       <!-- Logo and Title -->
       <div class="flex items-center">
         <img class="h-10 md:h-12" src="icons/Johns-Hopkins-University-Symbol.png" alt="JHU Logo">
         <a href="https://www.jhu.edu/" target="_blank">
-          <h1 class="text-xl md:text-2xl text-white font-bold ml-2 md:ml-4">Johns Hopkins University</h1>
+          <h1 class="text-xs md:text-2xl text-white font-bold ml-2 md:ml-4">Johns Hopkins University</h1>
         </a>
       </div>
       <!-- Navigation Links -->
       <nav class="space-x-2 md:space-x-6 flex ml-auto items-center text-white font-bold text-xs sm:text-sm md:text-base">
         <a href="officers.html" class="hover:underline cursor-pointer">Officer List</a>
-        <a href="joinus.html" class="hover:underline cursor-pointer">Join Us!</a>
         <a href="schedule.html" class="hover:underline cursor-pointer">2025 Schedule</a>
+        <a href="joinus.html" class="bg-gradient-to-r from-teal-400 via-blue-400 to-blue-600 text-black px-2 py-1 md:px-4 md:py-2 text-xs md:text-sm rounded-lg hover:text-white transition-colors">Join Us!</a>
       </nav>
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="relative h-screen flex items-center justify-center">
     <img class="absolute inset-0 w-full h-full object-cover opacity-100" src="images/Hacker.gif" alt="Hacker GIF">
     <div class="relative z-10 text-center">
-      <h2 class="text-6xl md:text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-blue-900" style="text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.7);">
+      <h2 class="text-6xl md:text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-blue-900 animate-fade-in" style="text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.7);">
         CYBERBIRDS
       </h2>
-      <p class="text-white text-xl md:text-2xl mt-4"> - At Johns Hopkins University - </p>
-      <div class="w-32 h-32 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden mt-8">
-        <a href="https://www.instagram.com/jhu_cyberbirds/">
-          <img src="icons/cyber_bird.png" alt="Circular Image" class="w-full h-full object-cover" />
+      <p class="text-white text-xl md:text-2xl mt-4 animate-fade-in-delay">At Johns Hopkins University</p>
+      <div class="w-32 h-32 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden mt-8 animate-fade-in-delay-2">
+        <a href="https://www.instagram.com/jhu_cyberbirds/" target="_blank">
+          <img src="icons/cyber_bird.png" alt="Cyberbirds Logo" class="w-full h-full object-cover hover:opacity-80 transition-opacity" />
         </a>
       </div>
     </div>
   </section>
 
-  <!-- "Who We Are" Section -->
-  <section id="who-we-are" class="scroll-mt-72 bg-black text-white py-6 px-6 bg-gradient-to-b from-black via-gray-700 to-black">
+  <!-- About Us Section -->
+  <section id="who-we-are" class="scroll-mt-72 bg-black text-white py-12 px-6">
     <div class="max-w-6xl mx-auto">
-      <!-- Terminal Window Design -->
-      <div class="bg-gray-900 rounded-lg shadow-2xl overflow-hidden border-2 border-gray-700">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-green-300 to-blue-900 text-transparent bg-clip-text animate-fade-in">
+        Who We Are
+      </h2>
+      <div class="bg-gray-900 rounded-lg shadow-2xl overflow-hidden border-2 border-gray-700 animate-slide-up">
         <!-- Terminal Header -->
         <div class="bg-gray-800 px-4 py-2 flex items-center">
           <div class="flex space-x-2">
@@ -67,142 +69,54 @@
         </div>
       </div>
     </div>
-
-    <script>
-      const codeText = `
-        We are a student organization funded by the Johns Hopkins CS Department, launching in Spring 2025.
-        
-        Our Mission: Serve as a hub for undergraduate students passionate about cybersecurity.
-        
-        Educational Focuses: Networks, Firewalls, Penetration Testing, Cryptology, and Computer Engineering.
-        
-        Main Events:
-          - Capture the Flag Competitions: Hands-on challenges to test and enhance skills.
-          - Member Project Showcases: Highlighting innovative student-led cybersecurity projects.
-          - Professional Seminars: Talks and workshops by industry-leading firms such as Palo Alto Networks and 
-            Harbor Labs.
-        
-        Current Objectives: Growing our internship funnel with local cybersecurity firms to allow members to 
-        further pursue cyber interests.
-      `;
-      
-      const typedContent = document.getElementById('typed-content');
-      let index = 0;
-
-      function typeCode() {
-        if (index < codeText.length) {
-          const char = codeText[index];
-          typedContent.textContent += char;
-          index++;
-          setTimeout(typeCode, 8); // Adjust typing speed here
-        }
-      }
-
-      // Intersection Observer setup to start typing when scrolled into view
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && index === 0) {
-            typeCode();
-            observer.disconnect(); // Stop observing after typing starts
-          }
-        });
-      }, { threshold: 0.5 }); // Trigger when at least 50% of the section is visible
-
-      observer.observe(document.getElementById('who-we-are'));
-    </script>
   </section>
-  
+
   <!-- FAQ Section -->
-  <section id="faq" class="bg-black text-white py-12 mt-24 scroll-mt-72">
+  <section id="faq" class="bg-black text-white py-12 scroll-mt-72">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-5xl font-bold text-center mb-8 bg-gradient-to-r from-green-300 to-blue-900 text-transparent bg-clip-text">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-green-300 to-blue-900 text-transparent bg-clip-text animate-fade-in">
         Frequently Asked Questions
       </h2>
       <div class="space-y-6">
         <!-- FAQ Item 1 -->
-        <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-6 rounded-lg shadow-md">
-          <button
-            class="w-full flex justify-between items-center text-lg font-bold focus:outline-none focus:ring-2 focus:ring-teal-500"
-            onclick="toggleFAQ(this)"
-          >
+        <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-6 rounded-lg shadow-md animate-slide-up">
+          <button class="w-full flex justify-between items-center text-lg font-bold focus:outline-none" onclick="toggleFAQ(this)">
             <span>Will I learn how to hack a device?</span>
-            <svg
-              class="w-6 h-6 text-teal-400 transform transition-transform"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
+            <svg class="w-6 h-6 text-teal-400 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           <div class="mt-4 hidden">
             <p>
-              Cyberbirds is an educational club designed to teach penetration testing skills 
-              while drawing a clear line at legal barrieres. This means that students will 
-              be equipped with the knowledge to perform basic hacks, but should follow all 
-              ethical guidelines involved in cybersecurity protocols. 
+              Cyberbirds is an educational club designed to teach penetration testing skills while emphasizing ethical guidelines. You'll learn the basics of hacking in a legal and responsible manner.
             </p>
           </div>
         </div>
         <!-- FAQ Item 2 -->
-        <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-6 rounded-lg shadow-md">
-          <button
-            class="w-full flex justify-between items-center text-lg font-bold focus:outline-none focus:ring-2 focus:ring-teal-500"
-            onclick="toggleFAQ(this)"
-          >
+        <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-6 rounded-lg shadow-md animate-slide-up">
+          <button class="w-full flex justify-between items-center text-lg font-bold focus:outline-none" onclick="toggleFAQ(this)">
             <span>Do I need prior experience to join?</span>
-            <svg
-              class="w-6 h-6 text-teal-400 transform transition-transform"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
+            <svg class="w-6 h-6 text-teal-400 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           <div class="mt-4 hidden">
             <p>
-              No! Anyone with an interest in cybersecurity is welcome to join! We will begin teaching material from scratch, and more experienced students will have faster learning opportunities along with CTF collaborations.
+              No prior experience is required! We welcome anyone with an interest in cybersecurity. Our curriculum is designed to accommodate all skill levels.
             </p>
           </div>
         </div>
         <!-- FAQ Item 3 -->
-        <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-6 rounded-lg shadow-md">
-          <button
-            class="w-full flex justify-between items-center text-lg font-bold focus:outline-none focus:ring-2 focus:ring-teal-500"
-            onclick="toggleFAQ(this)"
-          >
-            <span>What is the structure of learning the topics?</span>
-            <svg
-              class="w-6 h-6 text-teal-400 transform transition-transform"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
+        <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-6 rounded-lg shadow-md animate-slide-up">
+          <button class="w-full flex justify-between items-center text-lg font-bold focus:outline-none" onclick="toggleFAQ(this)">
+            <span>What topics will be covered?</span>
+            <svg class="w-6 h-6 text-teal-400 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           <div class="mt-4 hidden">
             <p>
-              Our covered topics begin with network fundamentals, moving to computer engineering, and finally cybersecurity and cryptology. The programming languages used will be Bash, Python, HTML, and PHP.
+              We cover network fundamentals, computer engineering, cybersecurity, and cryptology. Programming languages include Bash, Python, HTML, and PHP.
             </p>
           </div>
         </div>
@@ -210,84 +124,114 @@
     </div>
   </section>
 
-    <!-- Buttons Section -->
-  <section class="bg-black text-white py-12 bg-gradient-to-b from-black via-gray-700 to-black">
-    <div class="max-w-4xl mx-auto text-center py-4">
-      <h2 class="text-5xl p-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-blue-900 mb-6">
+  <!-- Resources Section -->
+  <section id="resources" class="bg-black text-white py-12 scroll-mt-72">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-green-300 to-blue-900 text-transparent bg-clip-text animate-fade-in">
         Resources
       </h2>
-        
-      <!-- Button Container -->
-      <div class="grid grid-cols-2 gap-6 w-full max-w-4xl mx-auto mb-24 md:grid-cols-3">
-        <!-- Officer List Button -->
-        <a href="officers.html" class="w-full">
-          <button class="group relative bg-slate-900 h-24 sm:h-24 md:h-24 w-full border-2 
-          border-teal-600 text-white text-base font-bold rounded-xl overflow-hidden 
-          transform transition-all duration-500 hover:scale-105 hover:border-emerald-400 
-          hover:text-emerald-300 p-3 text-left before:absolute before:w-10 before:h-10 
-          before:content[''] before:right-2 before:top-2 before:z-10 before:bg-indigo-500 
-          before:rounded-full before:blur-lg before:transition-all before:duration-500 
-          after:absolute after:z-10 after:w-16 after:h-16 after:content[''] after:bg-teal-400 
-          after:right-6 after:top-4 after:rounded-full after:blur-lg after:transition-all 
-          after:duration-500 hover:before:right-10 hover:before:-bottom-4 hover:before:blur 
-          hover:after:-right-6 hover:after:scale-110">
-            Officer List
-          </button>
+      <div class="grid place-items-center grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="officers.html" class="bg-gray-900 w-1/2  md:w-full ring-1 ring-white p-6 rounded-lg shadow-md hover:bg-gray-800 transition-colors animate-slide-up">
+          <h3 class="text-xl font-bold mb-2">Officer List</h3>
+          <p class="text-gray-400">Meet the team behind Cyberbirds.</p>
         </a>
-
-        <!-- 2025 Schedule Button -->
-        <a href="schedule.html" class="w-full">
-          <button class="group relative bg-slate-900 h-24 sm:h-24 md:h-24 w-full border-2 
-          border-teal-600 text-white text-base font-bold rounded-xl overflow-hidden 
-          transform transition-all duration-500 hover:scale-105 hover:border-emerald-400 
-          hover:text-emerald-300 p-3 text-left before:absolute before:w-10 before:h-10 
-          before:content[''] before:right-2 before:top-2 before:z-10 before:bg-indigo-500 
-          before:rounded-full before:blur-lg before:transition-all before:duration-500 
-          after:absolute after:z-10 after:w-16 after:h-16 after:content[''] after:bg-teal-400 
-          after:right-6 after:top-4 after:rounded-full after:blur-lg after:transition-all 
-          after:duration-500 hover:before:right-10 hover:before:-bottom-4 hover:before:blur 
-          hover:after:-right-6 hover:after:scale-110">
-            2025 Schedule
-          </button>
+        <a href="schedule.html" class="bg-gray-900 w-1/2 md:w-full ring-1 ring-white p-6 rounded-lg shadow-md hover:bg-gray-800 transition-colors animate-slide-up">
+          <h3 class="text-xl font-bold mb-2">2025 Schedule</h3>
+          <p class="text-gray-400">Check out our upcoming events.</p>
         </a>
-
-        <!-- Join Us Button -->
-        <a href="joinus.html" class="w-full col-span-2 md:col-span-1">
-          <button class="group relative bg-slate-900 h-24 sm:h-24 md:h-24 w-full border-2 
-          border-teal-600 text-white text-base font-bold rounded-xl overflow-hidden 
-          transform transition-all duration-500 hover:scale-105 hover:border-emerald-400 
-          hover:text-emerald-300 p-3 text-left before:absolute before:w-10 before:h-10 
-          before:content[''] before:right-2 before:top-2 before:z-10 before:bg-indigo-500 
-          before:rounded-full before:blur-lg before:transition-all before:duration-500 
-          after:absolute after:z-10 after:w-16 after:h-16 after:content[''] after:bg-teal-400 
-          after:right-6 after:top-4 after:rounded-full after:blur-lg after:transition-all 
-          after:duration-500 hover:before:right-10 hover:before:-bottom-4 hover:before:blur 
-          hover:after:-right-6 hover:after:scale-110">
-            Join Us!
-          </button>
+        <a href="joinus.html" class="bg-gray-900 w-1/2 md:w-full ring-1 ring-white p-6 rounded-lg shadow-md hover:bg-gray-800 transition-colors animate-slide-up">
+          <h3 class="text-xl font-bold mb-2">Join Us!</h3>
+          <p class="text-gray-400">Become a part of our community.</p>
         </a>
       </div>
+    </div>
   </section>
 
   <!-- Footer -->
-<footer class="bg-gradient-to-r from-gray-900 to-blue-300 text-white font-extrabold text-center py-2 mt-2 flex justify-between items-center px-12 z-70">
-  <div>
-    <img class="max-w-full h-auto w-24" src="icons/cyber_bird.png" alt="Cyberbird Logo">
-  </div>
-  <div>
-    <p class="text-xl">&copy; 2025 Johns Hopkins Cyberbirds</p>
-  </div>
-  <div class="flex-col justify-center items-center">
-    <div class="mb-2">Follow Us</div>
-    <a class="flex justify-center" href="https://www.instagram.com/jhu_cyberbirds/" target="_blank">
-      <img class="w-12 h-12" src="icons/Instagram_icon.png.webp" alt="Instagram Icon">
-    </a>
-  </div>
-</footer>
+  <footer class="bg-gradient-to-r from-gray-900 to-blue-300 text-white py-6 mt-12">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <img class="w-24" src="icons/cyber_bird.png" alt="Cyberbirds Logo">
+      </div>
+      <div class="text-center mb-4 md:mb-0">
+        <p class="text-sm md:text-base">&copy; 2025 Johns Hopkins Cyberbirds</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="text-sm md:text-base mb-2">Follow Us</p>
+        <a href="https://www.instagram.com/jhu_cyberbirds/" target="_blank">
+          <img class="w-8 h-8 md:w-12 md:h-12" src="icons/Instagram_icon.png.webp" alt="Instagram Icon">
+        </a>
+      </div>
+    </div>
+  </footer>
 
+  <script>
+    // Typing Animation for About Us Section
+    const codeText = `
+      We are a student organization funded by the Johns Hopkins CS Department, launching in Spring 2025.
+      
+      Our Mission: Serve as a hub for undergraduate students passionate about cybersecurity.
+      
+      Educational Focuses: Networks, Firewalls, Penetration Testing, Cryptology, and Computer Engineering.
+      
+      Main Events:
+        - Capture the Flag Competitions
+        - Member Project Showcases
+        - Professional Seminars by industry leaders like Palo Alto Networks and Harbor Labs.
+      
+      Current Objectives: Growing our internship funnel with local cybersecurity firms.
+    `;
+    const typedContent = document.getElementById('typed-content');
+    let index = 0;
 
-  <script src="script.js"></script>
+    function typeCode() {
+      if (index < codeText.length) {
+        typedContent.textContent += codeText[index];
+        index++;
+        setTimeout(typeCode, 10);
+      }
+    }
+
+    // Start typing when section is in view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && index === 0) {
+          typeCode();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.getElementById('who-we-are'));
+
+    // FAQ Toggle Function
+    function toggleFAQ(button) {
+      const faqContent = button.nextElementSibling;
+      faqContent.classList.toggle('hidden');
+      button.querySelector('svg').classList.toggle('rotate-180');
+    }
+
+    // Scroll Animations
+    const scrollElements = document.querySelectorAll('.animate-slide-up, .animate-fade-in, .animate-fade-in-delay, .animate-fade-in-delay-2');
+
+    const elementInView = (el) => {
+      const elementTop = el.getBoundingClientRect().top;
+      return elementTop <= window.innerHeight * 0.75;
+    };
+
+    const displayScrollElement = (element) => {
+      element.classList.add('animate');
+    };
+
+    const handleScrollAnimation = () => {
+      scrollElements.forEach((el) => {
+        if (elementInView(el)) {
+          displayScrollElement(el);
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScrollAnimation);
+  </script>
 </body>
 </html>
-
-
