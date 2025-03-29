@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Resources | JHU Cyberbirds</title>
+  <link rel="shortcut icon" type="image/png" href="icons/cyber_bird.png">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link href="../css/styles.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="terminal-bg">
+  <!-- Header (consistent with other pages) -->
+  <header class="fixed top-0 left-0 w-full bg-gray-900/80 backdrop-blur-sm z-50 border-b border-cyan-500/20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <img class="h-10" src="../icons/cyber_bird.png" alt="Cyberbirds Logo">
+        <span class="ml-3 text-xl font-bold font-['Orbitron'] text-cyan-400">CYBERBIRDS</span>
+      </div>
+      
+      <nav class="hidden md:flex space-x-8">
+        <a href="../index.html" class="nav-link text-gray-300 hover:text-white font-medium">HOME</a>
+        <a href="officers.html" class="nav-link text-gray-300 hover:text-white font-medium">TEAM</a>
+        <a href="schedule.html" class="nav-link text-gray-300 hover:text-white font-medium">EVENTS</a>
+        <a href="resources.html" class="nav-link text-cyan-400 hover:text-white font-medium">RESOURCES</a>
+        <a href="joinus.html" class="bg-gradient-to-r from-blue-500 to-teal-500 text-black px-6 py-2 rounded-md font-bold hover:from-blue-400 hover:to-teal-400 transition-all font-['Orbitron']">
+          JOIN US
+        </a>
+      </nav>
+      
+      <button class="md:hidden text-gray-300 hover:text-white" id="mobile-menu-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold font-['Orbitron'] cyber-text-gradient mb-4">
+        CYBER ARMORY
+      </h1>
+      <p class="text-xl text-cyan-300 max-w-3xl mx-auto">
+        >_ Essential tools and knowledge for your cybersecurity journey
+      </p>
+    </div>
+
+    <!-- Resource Categories -->
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Learning Resources -->
+      <div class="bg-gray-900/70 cyber-border rounded-xl p-6 hover:cyber-glow transition-all">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 bg-blue-900/50 rounded-full flex items-center justify-center border border-blue-500/30 mr-4">
+            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold font-['Orbitron'] text-blue-400">LEARNING PATHS</h2>
+        </div>
+        <ul class="space-y-4">
+          <li>
+            <a href="https://tryhackme.com" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              TryHackMe - Interactive cybersecurity training
+            </a>
+          </li>
+          <li>
+            <a href="https://overthewire.org/wargames/" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              OverTheWire - War games for all skill levels
+            </a>
+          </li>
+          <li>
+            <a href="https://www.hackthebox.com" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              Hack The Box - Hands-on penetration testing labs
+            </a>
+          </li>
+          <li>
+            <a href="https://cybrary.it" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              Cybrary - Free cybersecurity courses
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tools Section -->
+      <div class="bg-gray-900/70 cyber-border rounded-xl p-6 hover:cyber-glow transition-all">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 bg-green-900/50 rounded-full flex items-center justify-center border border-green-500/30 mr-4">
+            <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold font-['Orbitron'] text-green-400">HACKER TOOLKIT</h2>
+        </div>
+        <ul class="space-y-4">
+          <li>
+            <a href="https://www.kali.org" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-green-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              Kali Linux - Penetration testing distribution
+            </a>
+          </li>
+          <li>
+            <a href="https://www.metasploit.com" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-green-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              Metasploit - Exploitation framework
+            </a>
+          </li>
+          <li>
+            <a href="https://www.wireshark.org" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-green-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              Wireshark - Network protocol analyzer
+            </a>
+          </li>
+          <li>
+            <a href="https://www.burpsuite.com" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-green-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              Burp Suite - Web application testing
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CTF Resources -->
+      <div class="bg-gray-900/70 cyber-border rounded-xl p-6 hover:cyber-glow transition-all">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 bg-purple-900/50 rounded-full flex items-center justify-center border border-purple-500/30 mr-4">
+            <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold font-['Orbitron'] text-purple-400">CTF RESOURCES</h2>
+        </div>
+        <ul class="space-y-4">
+          <li>
+            <a href="https://ctftime.org" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              CTFtime - CTF calendar and writeups
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/apsdehal/awesome-ctf" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              Awesome CTF - Curated CTF resource list
+            </a>
+          </li>
+          <li>
+            <a href="https://picoctf.org" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              picoCTF - Beginner-friendly CTF
+            </a>
+          </li>
+          <li>
+            <a href="https://ctf101.org" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              CTF 101 - CTF skill primer
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Career Prep -->
+      <div class="bg-gray-900/70 cyber-border rounded-xl p-6 hover:cyber-glow transition-all">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 bg-yellow-900/50 rounded-full flex items-center justify-center border border-yellow-500/30 mr-4">
+            <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold font-['Orbitron'] text-yellow-400">CAREER PREP</h2>
+        </div>
+        <ul class="space-y-4">
+          <li>
+            <a href="https://www.comptia.org/certifications/security" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              CompTIA Security+ - Foundational cert
+            </a>
+          </li>
+          <li>
+            <a href="https://www.isc2.org/Certifications/CISSP" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              CISSP - Advanced security certification
+            </a>
+          </li>
+          <li>
+            <a href="https://www.sans.org/courses/" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              SANS Training - Industry-leading courses
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com" target="_blank" class="flex items-center text-cyan-300 hover:text-white group">
+              <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3 group-hover:animate-pulse"></span>
+              LinkedIn - Networking and job hunting
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Additional Resources Section -->
+    <div class="mt-16 bg-gray-900/70 cyber-border rounded-xl p-8 hover:cyber-glow transition-all">
+      <h2 class="text-2xl font-bold font-['Orbitron'] text-cyan-400 mb-6">JHU-SPECIFIC RESOURCES</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-xl font-semibold text-white mb-3">University Resources</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="https://it.johnshopkins.edu/security/" class="text-cyan-300 hover:text-white flex items-center">
+                <span class="mr-2">🔒</span> JHU IT Security Office
+              </a>
+            </li>
+            <li>
+              <a href="https://engineering.jhu.edu/cs/undergraduate-students/courses/" class="text-cyan-300 hover:text-white flex items-center">
+                <span class="mr-2">📚</span> CS Course Catalog
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-white mb-3">Local Opportunities</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="#" class="text-cyan-300 hover:text-white flex items-center">
+                <span class="mr-2">💼</span> JHU Security Internships
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-cyan-300 hover:text-white flex items-center">
+                <span class="mr-2">👥</span> Baltimore Cybersecurity Meetups
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer (consistent with other pages) -->
+  <footer class="bg-gray-900/80 text-gray-400 py-12 border-t border-cyan-500/20">
+    <!-- ... same footer content as other pages ... -->
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

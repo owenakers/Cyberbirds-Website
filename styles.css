@@ -1,140 +1,61 @@
-  /* Keyframes for fade-in animation */
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  /* Apply fade-in effect to the image */
-  .fade-in {
-    animation: fadeIn 3s ease-out forwards; /* Change duration (3s) as needed */
-  }
-
-/* Add custom animation for header */
-@keyframes slideIn {
-  0% {
-      transform: translateY(-100%);
-      opacity: 0;
-  }
-  100% {
-      transform: translateY(0);
-      opacity: 1;
-  }
+body {
+  background-color: #0a0a0a;
+  color: #e2e8f0;
+  font-family: 'JetBrains Mono', monospace;
 }
 
-.slide-in {
-  animation: slideIn 1s ease-out forwards;
-}
-.gif-slow {
-animation: slow-motion 10s infinite;
+.cyber-gradient {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f766e 100%);
 }
 
-@keyframes slow-motion {
-0% {
-  transform: scale(1);
-}
-100% {
-  transform: scale(1);
-}
+.cyber-border {
+  border: 1px solid #1e40af;
+  box-shadow: 0 0 15px rgba(56, 182, 255, 0.3);
 }
 
-.scroll-logo {
-  animation: scroll 10s infinite;
+.cyber-glow {
+  box-shadow: 0 0 20px rgba(56, 182, 255, 0.5);
 }
 
-@keyframes scroll {
-  0% {
-    transform: translate(-50%, -50%);
-  }
-  100% {
-    transform: translate(-50%, 100vh); /* Moves the logo to the bottom */
-  }
+.cyber-text-gradient {
+  background: linear-gradient(90deg, #60a5fa, #2dd4bf);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-/*Style for the "code" in the about us section" */
-#typed-content {
-  color: lightgreen;
-  font-family: 'Source Code Pro', monospace;
-  white-space: pre-wrap;
-  overflow: visible; /* Remove scroll */
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+.terminal-bg {
+  background-color: #111827;
+  background-image: 
+    linear-gradient(rgba(56, 182, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 182, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 .blink {
-  animation: blink 1s steps(2, start) infinite;
+  animation: blink 1s step-end infinite;
 }
 
-/* CSS */
-.navbutton {
-  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
-  border-radius: 8px;
-  border-style: none;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  flex-shrink: 0;
-  font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  height: 4rem;
-  padding: 0 1.6rem;
-  text-align: center;
-  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
-  transition: all .5s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-.navbutton:hover {
-  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
-  transition-duration: .1s;
+.nav-link {
+  position: relative;
 }
 
-@media (min-width: 768px) {
-  .navbutton {
-    padding: 0 2.6rem;
-  }
+.nav-link:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, #60a5fa, #2dd4bf);
+  transition: width 0.3s ease;
 }
 
-/* Animations */
-.animate-fade-in {
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
-}
-
-.animate-fade-in-delay {
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out 0.5s forwards;
-}
-
-.animate-fade-in-delay-2 {
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out 1s forwards;
-}
-
-.animate-slide-up {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUp 1s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.nav-link:hover:after {
+  width: 100%;
 }
