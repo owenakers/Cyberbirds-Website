@@ -1,116 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule | Cyberbirds</title>
-    <link rel="shortcut icon" type="image/png" href="icons/cyber_bird.png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCHEDULE | JHU Cyberbirds</title>
+  <link rel="shortcut icon" type="image/png" href="icons/cyber_bird.png">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-    <body class="font-mono bg-black flex flex-col min-h-screen">
-        <!-- Header -->
-        <header class="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-300 to-gray-900 h-16 z-50 shadow-md shadow-black">
-            <div class="max-w-full flex items-center px-4 h-full">
-                <div class="flex items-center">
-                    <img class="h-12" src="icons/Johns-Hopkins-University-Symbol.png" alt="JHU Logo">
-                    <a href="https://www.jhu.edu/" target="_blank">
-                        <h1 class="text-2xl text-white font-bold ml-4">Johns Hopkins University</h1>
-                    </a>
-                </div>
-                <nav class="space-x-6 flex ml-auto items-center text-white font-bold text-lg">
-                    <a href="index.html" class="hover:underline mr-4">Home</a>
-                </nav>
-            </div>
-        </header>
+<body class="terminal-bg">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full bg-gray-900/80 backdrop-blur-sm z-50 border-b border-cyan-500/20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <img class="h-10" src="icons/cyber_bird.png" alt="Cyberbirds Logo">
+        <span class="ml-3 text-xl font-bold font-['Orbitron'] text-cyan-400">Cyberbirds @ JHU</span>
+      </div>
+      
+      <nav class="hidden md:flex space-x-8 items-center">
+        <a href="index.html" class="nav-link text-gray-300 hover:text-white font-medium">HOME</a>
+        <a href="officers.html" class="nav-link text-gray-300 hover:text-white font-medium">TEAM</a>
+        <a href="schedule.html" class="nav-link text-gray-300 hover:text-white font-medium">2025 SCHEDULE</a>
+        <a href="resources.html" class="nav-link text-gray-300 hover:text-white font-medium">RESOURCES</a>
+        <a href="joinus.html" class="bg-gradient-to-r from-blue-500 to-teal-500 text-black px-6 py-2 rounded-md font-bold hover:from-blue-400 hover:to-teal-400 transition-all font-['Orbitron']">
+          JOIN US
+        </a>
+      </nav>
+      
+      <button class="md:hidden text-gray-300 hover:text-white" id="mobile-menu-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
 
-        <!-- Main Content -->
-        <main class="flex-1 w-full max-w-4xl mx-auto mb-24 pt-20">
-            <h2 class="text-4xl font-bold text-white mb-6 p-12 text-center">Meeting Summaries</h2>
-            <div class="space-y-6">
-                <!-- Meeting 1 -->
-                <div class="bg-slate-900 border-2 border-teal-600 rounded-xl p-6 shadow-lg">
-                    <h3 class="text-xl font-bold text-emerald-300">Week 1: Introduction & Basics</h3>
-                    <p class="text-gray-300 mt-2">Date: February 18, 2025</p>
-                    <details class="mt-4">
-                    <summary class="text-teal-400 cursor-pointer hover:underline">View Summary</summary>
-                    <p class="text-gray-300 mt-2">We covered fundamental networking concepts, 
-                        introduced team members, and set expectations. We also began working on OverTheWire through Bandit levels
-                        0-6</p>
-                    
-                    <h4 class="text-lg text-emerald-400 mt-4">Resources Used</h4>
-                    <ul class="list-disc list-inside text-gray-300">
-                        <li><a href="https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi" target="_blank" class="text-teal-300 hover:text-emerald-400">Free Networking Course</a></li>
-                        <li><a href="https://overthewire.org/wargames/" target="_blank" class="text-teal-300 hover:text-emerald-400">OverTheWire</a></li>
-                    </ul> 
-                    <h4 class="text-lg text-emerald-400 mt-4">Supplemental Resources</h4>
-                    <ul class="list-disc list-inside text-gray-300">
-                        <li><a href="https://www.youtube.com/watch?v=ff2Au8BIy_A" target="_blank" class="text-teal-300 hover:text-emerald-400">OverTheWire Tutorial</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=Cpxwo4atrEc" target="_blank" class="text-teal-300 hover:text-emerald-400">Basic Command Line Tutorial</a></li>
-                    </ul>
-                    </details>
-                </div>
-                <!-- Meeting 2 -->
-                <div class="bg-slate-900 border-2 border-teal-600 rounded-xl p-6 shadow-lg">
-                    <h3 class="text-xl font-bold text-emerald-300">Week 2: Deep Dive into Network Devices</h3>
-                    <p class="text-gray-300 mt-2">Date: February 28, 2025</p>
-                    <details class="mt-4">
-                    <summary class="text-teal-400 cursor-pointer hover:underline">View Summary</summary>
-                    <p class="text-gray-300 mt-2">We continued our discussion of network devices and prepared for 
-                        future CTF challenges
-                    </p>    
-                    <h4 class="text-lg text-emerald-400 mt-4">Resources Used</h4>
-                    <ul class="list-disc list-inside text-gray-300">
-                        <li><a href="https://docs.google.com/presentation/d/1-8qECYO0vLUMtIYK6KOCpkR8TBUqEBeeIRCiGVU4PXM/edit#slide=id.g33ae09b0bab_1_0" target="_blank" class="text-teal-300 hover:text-emerald-400">Slide Deck</a></li>
-                    </ul> 
-                </div>
-                <!-- Meeting 3 -->
-                <div class="bg-slate-900 border-2 border-teal-600 rounded-xl p-6 shadow-lg">
-                    <h3 class="text-xl font-bold text-emerald-300">Week 3: OSI Model & CTFs</h3>
-                    <p class="text-gray-300 mt-2">Date: March 11, 2025</p>
-                <details class="mt-4">
-                    <summary class="text-teal-400 cursor-pointer hover:underline">View Summary</summary>
-                    <p class="text-gray-300 mt-2">We reviewed network devices and collaborated on CTFs</p>    
-                    <h4 class="text-lg text-emerald-400 mt-4">Resources Used</h4>
-                    <ul class="list-disc list-inside text-gray-300">
-                        <li><a href="https://www.hackthebox.com/" class="text-teal-300 hover:text-emerald-400">Hack the Box (CTF Site)</a></li>
-                    </ul>
-                </div>
-                <!-- Meeting 4 -->
-                <div class="bg-slate-900 border-2 border-teal-600 rounded-xl p-6 shadow-lg">
-                    <h3 class="text-xl font-bold text-emerald-300">Week 4: TOR and its Implications</h3>
-                    <p class="text-gray-300 mt-2">Date: March 26, 2025</p>
-                <details class="mt-4">
-                    <summary class="text-teal-400 cursor-pointer hover:underline">View Summary</summary>
-                    <p class="text-gray-300 mt-2">We discussed TOR's history, usage, and its ethical concerns</p> 
-                    <h4 class="text-lg text-emerald-400 mt-4">Resources Used</h4>
-                    <ul class="list-disc list-inside text-gray-300">
-                        <li><a href="https://docs.google.com/presentation/d/1Vi1PVIwCtLzC-XcVxuK43eacArF3ic0y1YGRXNGUXU0/edit?usp=sharing" target="_blank" class="text-teal-300 hover:text-emerald-400">Slide Deck</a></li>
-                    </ul>
-                    <ul class="list-disc list-inside text-gray-300">
-                        <li><a href="https://drive.google.com/drive/folders/1LbSN_uz8rMMCtXY0TzCJyjT2BEmkav2H?usp=drive_link" target="_blank" class="text-teal-300 hover:text-emerald-400">Link to Download Tor</a></li>
-                    </ul>   
-                </div>
-            </div>
-        </main>
+  <!-- Main Content -->
+  <main class="pt-32 pb-20 px-6 max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold font-['Orbitron'] cyber-text-gradient mb-4">
+        MISSION SCHEDULE
+      </h1>
+      <p class="text-xl text-cyan-300">
+        >_ Archive of completed meetings and training exercises
+      </p>
+    </div>
 
-        <!-- Footer -->
-        <footer class="bg-gradient-to-r from-gray-900 to-blue-300 text-white font-extrabold text-center py-2 mt-2 flex justify-between items-center px-12">
-            <div>
-            <img class="max-w-full h-auto w-24" src="icons/cyber_bird.png" alt="Cyberbird Logo">
+    <!-- Mission Logs -->
+    <div class="space-y-6">
+      <!-- Mission 1 -->
+      <div class="bg-gray-900/70 cyber-border rounded-xl p-6 hover:cyber-glow transition-all">
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="text-xl font-bold font-['Orbitron'] text-blue-400">MISSION #001</h3>
+            <p class="text-cyan-300 mt-1">Introduction & Basics</p>
+            <p class="text-gray-400 mt-2">DATE: 02-18-2025</p>
+          </div>
+          <span class="bg-blue-900/50 text-blue-400 px-3 py-1 rounded-full text-sm font-medium">COMPLETED</span>
+        </div>
+        
+        <details class="mt-4 group">
+          <summary class="text-cyan-400 cursor-pointer hover:text-white font-medium flex items-center">
+            <svg class="w-5 h-5 mr-2 transition-transform duration-200 group-open:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+            OPERATION DETAILS
+          </summary>
+          <div class="mt-4 pl-7">
+            <p class="text-gray-300">
+              >_ Established foundational networking concepts and started on OverTheWire (Bandit levels 0-6).
+            </p>
+            
+            <div class="mt-6">
+              <h4 class="text-lg font-['Orbitron'] text-blue-400 mb-2">PRIMARY TOOLS:</h4>
+              <ul class="space-y-2 text-cyan-300">
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                  <a href="https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi" target="_blank" class="hover:text-white underline">Networking Fundamentals Course</a>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                  <a href="https://overthewire.org/wargames/" target="_blank" class="hover:text-white underline">OverTheWire Bandit</a>
+                </li>
+              </ul>
             </div>
-            <div>
-            <p class="text-xl">&copy; 2025 Johns Hopkins Cyberbirds</p>
+
+            <div class="mt-6">
+              <h4 class="text-lg font-['Orbitron'] text-blue-400 mb-2">SUPPLEMENTAL INTELLIGENCE:</h4>
+              <ul class="space-y-2 text-cyan-300">
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                  <a href="https://www.youtube.com/watch?v=ff2Au8BIy_A" target="_blank" class="hover:text-white underline">OverTheWire Tactical Guide</a>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                  <a href="https://www.youtube.com/watch?v=Cpxwo4atrEc" target="_blank" class="hover:text-white underline">CLI Fundamentals</a>
+                </li>
+              </ul>
             </div>
-            <div class="flex-col justify-center items-center">
-            <div class="mb-2">Follow Us</div>
-            <a class="flex justify-center" href="https://www.instagram.com/jhu_cyberbirds/" target="_blank">
-                <img class="w-12 h-12" src="icons/Instagram_icon.png.webp" alt="Instagram Icon">
+          </div>
+        </details>
+      </div>
+
+      <!-- Mission 2 -->
+      <div class="bg-gray-900/70 cyber-border rounded-xl p-6 hover:cyber-glow transition-all">
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="text-xl font-bold font-['Orbitron'] text-green-400">MISSION #002</h3>
+            <p class="text-cyan-300 mt-1">Network Devices Introduction</p>
+            <p class="text-gray-400 mt-2">DATE: 02-28-2025</p>
+          </div>
+          <span class="bg-green-900/50 text-green-400 px-3 py-1 rounded-full text-sm font-medium">COMPLETED</span>
+        </div>
+        
+        <details class="mt-4 group">
+          <summary class="text-cyan-400 cursor-pointer hover:text-white font-medium flex items-center">
+            <svg class="w-5 h-5 mr-2 transition-transform duration-200 group-open:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+            OPERATION DETAILS
+          </summary>
+          <div class="mt-4 pl-7">
+            <p class="text-gray-300">
+              >_ Dove into network device fundamentals. Prepared strategic plans for upcoming CTF engagements.
+            </p>
+            
+            <div class="mt-6">
+              <h4 class="text-lg font-['Orbitron'] text-green-400 mb-2">PRIMARY TOOLS:</h4>
+              <ul class="space-y-2 text-cyan-300">
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                  <a href="https://docs.google.com/presentation/d/1-8qECYO0vLUMtIYK6KOCpkR8TBUqEBeeIRCiGVU4PXM/edit#slide=id.g33ae09b0bab_1_0" target="_blank" class="hover:text-white underline">Network Device Slide Deck</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Mission 3 -->
+      <div class="bg-gray-900/70 cyber-border rounded-xl p-6 hover:cyber-glow transition-all">
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="text-xl font-bold font-['Orbitron'] text-purple-400">MISSION #003</h3>
+            <p class="text-cyan-300 mt-1">The OSI Model</p>
+            <p class="text-gray-400 mt-2">DATE: 03-11-2025</p>
+          </div>
+          <span class="bg-purple-900/50 text-purple-400 px-3 py-1 rounded-full text-sm font-medium">COMPLETED</span>
+        </div>
+        
+        <details class="mt-4 group">
+          <summary class="text-cyan-400 cursor-pointer hover:text-white font-medium flex items-center">
+            <svg class="w-5 h-5 mr-2 transition-transform duration-200 group-open:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+            OPERATION DETAILS
+          </summary>
+          <div class="mt-4 pl-7">
+            <p class="text-gray-300">
+              >_ Conducted discussions over the OSI model. Collaborated on a beginner-friendly CTF
+            </p>
+            
+            <div class="mt-6">
+              <h4 class="text-lg font-['Orbitron'] text-purple-400 mb-2">PRIMARY TOOLS:</h4>
+              <ul class="space-y-2 text-cyan-300">
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                  <a href="https://www.hackthebox.com/" target="_blank" class="hover:text-white underline">Hack The Box CTF Platform</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Mission 4 -->
+      <div class="bg-gray-900/70 cyber-border rounded-xl p-6 hover:cyber-glow transition-all">
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="text-xl font-bold font-['Orbitron'] text-yellow-400">MISSION #004</h3>
+            <p class="text-cyan-300 mt-1">TOR Network Analysis</p>
+            <p class="text-gray-400 mt-2">DATE: 03-26-2025</p>
+          </div>
+          <span class="bg-yellow-900/50 text-yellow-400 px-3 py-1 rounded-full text-sm font-medium">COMPLETED</span>
+        </div>
+        
+        <details class="mt-4 group">
+          <summary class="text-cyan-400 cursor-pointer hover:text-white font-medium flex items-center">
+            <svg class="w-5 h-5 mr-2 transition-transform duration-200 group-open:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+            OPERATION DETAILS
+          </summary>
+          <div class="mt-4 pl-7">
+            <p class="text-gray-300">
+              >_ Investigated TOR network architecture, historical deployment, and ethical implications. Conducted live dark web navigation exercises.
+            </p>
+            
+            <div class="mt-6">
+              <h4 class="text-lg font-['Orbitron'] text-yellow-400 mb-2">PRIMARY TOOLS:</h4>
+              <ul class="space-y-2 text-cyan-300">
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
+                  <a href="https://docs.google.com/presentation/d/1Vi1PVIwCtLzC-XcVxuK43eacArF3ic0y1YGRXNGUXU0/edit?usp=sharing" target="_blank" class="hover:text-white underline">TOR Network Slide Deck</a>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
+                  <a href="https://drive.google.com/drive/folders/1LbSN_uz8rMMCtXY0TzCJyjT2BEmkav2H?usp=drive_link" target="_blank" class="hover:text-white underline">TOR Deployment Package</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Mission 5 -->
+      <div class="bg-gray-900/70 cyber-border rounded-xl p-6 hover:cyber-glow transition-all">
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="text-xl font-bold font-['Orbitron'] text-purple-400">MISSION #005</h3>
+          </div>
+          <span class="bg-purple-900/50 text-purple-400 px-3 py-1 rounded-full text-sm font-medium">Upcoming</span>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+
+<!-- Footer -->
+<footer class="bg-gray-900/90 backdrop-blur-md border-t border-cyan-500/20 pt-12 pb-8 px-6">
+    <div class="max-w-7xl mx-auto">
+      <!-- Footer Content -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <!-- About Section -->
+        <div class="col-span-1">
+          <h3 class="text-lg font-['Orbitron'] font-bold text-cyan-400 mb-4 tracking-wider">CYBERBIRDS</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            JHU's premier cybersecurity team.
+          </p>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="col-span-1">
+          <h3 class="text-lg font-['Orbitron'] font-bold text-cyan-400 mb-4 tracking-wider">QUICK LINKS</h3>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-gray-400 hover:text-cyan-300 transition-colors text-sm">>_ Home</a></li>
+            <li><a href="officers.html" class="text-gray-400 hover:text-cyan-300 transition-colors text-sm">>_ Command Team</a></li>
+            <li><a href="joinus.html" class="text-gray-400 hover:text-cyan-300 transition-colors text-sm">>_ Become a Cyberbird</a></li>
+            <li><a href="resources.html" class="text-gray-400 hover:text-cyan-300 transition-colors text-sm">>_ Training Resources</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact -->
+        <div class="col-span-1">
+          <h3 class="text-lg font-['Orbitron'] font-bold text-cyan-400 mb-4 tracking-wider">CONTACT</h3>
+          <ul class="space-y-3">
+            <li class="text-gray-400 text-sm">>_ Hackerman Hall</li>
+            <li class="text-gray-400 text-sm">>_ Johns Hopkins University</li>
+          </ul>
+        </div>
+        
+        <!-- Social Media -->
+        <div class="col-span-1">
+          <h3 class="text-lg font-['Orbitron'] font-bold text-cyan-400 mb-4 tracking-wider">CONNECT</h3>
+          <div class="flex space-x-4">
+            <a href="https://www.linkedin.com/company/cyberbirds/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-cyan-500/20 transition-colors border border-gray-700 hover:border-cyan-400/50">
+                <svg class="w-5 h-5 text-gray-400 hover:text-cyan-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+            <a href="https://www.instagram.com/jhu_cyberbirds" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-cyan-500/20 transition-colors border border-gray-700 hover:border-cyan-400/50">
+              <svg class="w-5 h-5 text-gray-400 hover:text-cyan-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+              </svg>
             </a>
-            </div>
-        </footer>
-    </body>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Copyright -->
+      <div class="border-t border-gray-800 pt-8">
+        <div class="flex flex-col md:flex-row justify-center items-center">
+          <p class="text-gray-500 text-sm mb-4 md:mb-0">
+            &copy; 2025 JHU CYBERBIRDS. ALL SYSTEMS OPERATIONAL.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
+  <script src="js/main.js"></script>
+</body>
 </html>
