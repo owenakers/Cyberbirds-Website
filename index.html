@@ -1,241 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cyberbirds | JHU Cybersecurity Collective</title>
-  <meta name="description" content="Johns Hopkins University's elite cybersecurity training ground">
-  <link rel="shortcut icon" type="image/png" href="icons/cyber_bird.png">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberbirds | JHU Cybersecurity Collective</title>
+    <meta name="description" content="Johns Hopkins University's elite cybersecurity training ground">
+    <link rel="shortcut icon" type="image/png" href="icons/cyber_bird.png">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Basic styles from your other pages for consistency */
+      .terminal-bg { background-color: #111827; }
+      .cyber-text-gradient { background: linear-gradient(90deg, #3b82f6, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+      .cyber-border { border: 1px solid #1e40af; }
+      .hover\:cyber-glow:hover { box-shadow: 0 0 15px rgba(56, 182, 255, 0.4); border-color: #3b82f6; }
 
-<body>
-  <!-- Header -->
-  <header class="fixed top-0 left-0 w-full bg-gray-900/80 backdrop-blur-sm z-50 border-b border-cyan-500/20">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="flex items-center">
-        <img class="h-10" src="icons/cyber_bird.png" alt="Cyberbirds Logo">
-        <span class="ml-3 text-xl font-bold font-['Orbitron'] text-cyan-400">Cyberbirds @ JHU</span>
-      </div>
+      /* Animated Grid Background for Hero */
+      .animated-grid-bg { 
+        position: relative; 
+        overflow: hidden; 
+        background-color: #111827; /* Set base background color */
+      }
+      .animated-grid-bg::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        z-index: 0;
+        background-image:
+          linear-gradient(rgba(56, 182, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(56, 182, 255, 0.1) 1px, transparent 1px);
+        background-size: 3rem 3rem;
+        animation: moveGrid 20s linear infinite;
+      }
+      @keyframes moveGrid {
+        from { transform: translate(0, 0); }
+        to { transform: translate(-50%, -50%); }
+      }
+
+      /* Improved Blinking Cursor */
+      .blinking-cursor {
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        from, to { color: transparent; }
+        50% { color: #2dd4bf; } /* Teal color */
+      }
       
-      <nav class="hidden md:flex space-x-8 items-center">
-        <a href="#" class="nav-link text-gray-300 hover:text-white font-medium">HOME</a>
-        <a href="officers.html" class="nav-link text-gray-300 hover:text-white font-medium">TEAM</a>
-        <a href="schedule.html" class="nav-link text-gray-300 hover:text-white font-medium">2025 SCHEDULE</a>
-        <a href="resources.html" class="nav-link text-gray-300 hover:text-white font-medium">RESOURCES</a>
-        <a href="joinus.html" class="bg-gradient-to-r from-blue-500 to-teal-500 text-black px-6 py-2 rounded-md font-bold hover:from-blue-400 hover:to-teal-400 transition-all font-['Orbitron']">
-          JOIN US
-        </a>
-      </nav>
-      
-      <button class="md:hidden text-gray-300 hover:text-white" id="mobile-menu-button">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-  </header>
+      /* Fade-up animation for feature cards */
+      .fade-up {
+        animation: fadeUp 0.6s ease-out forwards;
+        opacity: 0;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
 
-  <!-- Hero Section -->
-  <section class="pt-32 pb-20 terminal-bg relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-6xl font-bold leading-tight font-['Orbitron'] cyber-text-gradient">
-          CYBERBIRDS
-        </h1>
-        <p class="mt-6 text-xl text-cyan-200 font-medium">
-          <span class="text-green-400">$</span> JHU's premier undergraduate cybersecurity collective training the next generation of ethical hackers
-        </p>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="joinus.html" class="bg-gradient-to-r from-blue-500 to-teal-500 text-black px-8 py-3 rounded-md font-bold hover:from-blue-400 hover:to-teal-400 transition-all font-['Orbitron'] cyber-glow">
-            ENLIST NOW
-          </a>
-          <a href="schedule.html" class="border border-cyan-500 text-cyan-400 px-8 py-3 rounded-md font-bold hover:bg-cyan-900/30 transition-all font-['Orbitron']">
-            VIEW MISSIONS
-          </a>
+  <body class="terminal-bg text-gray-300">
+    <header class="fixed top-0 left-0 w-full bg-gray-900/80 backdrop-blur-sm z-50 border-b border-cyan-500/20">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center">
+          <img class="h-10" src="icons/cyber_bird.png" alt="Cyberbirds Logo">
+          <span class="ml-3 text-xl font-bold font-['Orbitron'] text-cyan-400">Cyberbirds @ JHU</span>
         </div>
+        <nav class="hidden md:flex space-x-8 items-center">
+          <a href="#" class="nav-link text-gray-300 hover:text-white font-medium">HOME</a>
+          <a href="officers.html" class="nav-link text-gray-300 hover:text-white font-medium">TEAM</a>
+          <a href="schedule.html" class="nav-link text-gray-300 hover:text-white font-medium">2025 SCHEDULE</a>
+          <a href="resources.html" class="nav-link text-gray-300 hover:text-white font-medium">RESOURCES</a>
+          <a href="joinus.html" class="bg-gradient-to-r from-blue-500 to-teal-500 text-black px-6 py-2 rounded-md font-bold hover:from-blue-400 hover:to-teal-400 transition-all font-['Orbitron']">JOIN US</a>
+        </nav>
+        <button class="md:hidden text-gray-300 hover:text-white" id="mobile-menu-button">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Features Section -->
-  <section class="py-20 bg-gray-900/50">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center font-['Orbitron'] cyber-text-gradient">
-        CYBER OPERATIONS
-      </h2>
-      <p class="mt-4 text-lg text-center text-gray-400 max-w-3xl mx-auto">
-        // Our training program prepares cadets for real-world cyber warfare
-      </p>
-      
-      <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Feature 1 -->
-        <div class="bg-gray-800/70 p-8 rounded-lg cyber-border hover:cyber-glow transition-all">
-          <div class="w-12 h-12 bg-blue-900/50 rounded-full flex items-center justify-center border border-blue-500/30">
-            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-            </svg>
-          </div>
-          <h3 class="mt-6 text-xl font-semibold text-white font-['Orbitron']">REDUCE ATTACK SURFACE</h3>
-          <p class="mt-3 text-gray-400">
-            >_ Minimize vulnerabilities through offensive security drills and defense hardening
+    <section class="pt-40 pb-28 animated-grid-bg">
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-3xl text-center md:text-left">
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight font-['Orbitron'] cyber-text-gradient">CYBERBIRDS</h1>
+          <p class="mt-6 text-xl text-cyan-200 font-medium">
+            <span class="text-green-400">$</span> JHU's premier undergraduate cybersecurity collective, training the next generation of ethical hackers and digital defenders.
           </p>
-        </div>
-        
-        <!-- Feature 2 -->
-        <div class="bg-gray-800/70 p-8 rounded-lg cyber-border hover:cyber-glow transition-all">
-          <div class="w-12 h-12 bg-green-900/50 rounded-full flex items-center justify-center border border-green-500/30">
-            <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-            </svg>
-          </div>
-          <h3 class="mt-6 text-xl font-semibold text-white font-['Orbitron']">EXPLOIT VULNERABILITIES</h3>
-          <p class="mt-3 text-gray-400">
-            >_ Penetrate systems using real-world attack vectors in our cyber range
-          </p>
-        </div>
-        
-        <!-- Feature 3 -->
-        <div class="bg-gray-800/70 p-8 rounded-lg cyber-border hover:cyber-glow transition-all">
-          <div class="w-12 h-12 bg-purple-900/50 rounded-full flex items-center justify-center border border-purple-500/30">
-            <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-            </svg>
-          </div>
-          <h3 class="mt-6 text-xl font-semibold text-white font-['Orbitron']">TEST DEFENSES</h3>
-          <p class="mt-3 text-gray-400">
-            >_ Stress-test security controls against advanced persistent threats
-          </p>
-        </div>
-        
-        <!-- Feature 4 -->
-        <div class="bg-gray-800/70 p-8 rounded-lg cyber-border hover:cyber-glow transition-all">
-          <div class="w-12 h-12 bg-yellow-900/50 rounded-full flex items-center justify-center border border-yellow-500/30">
-            <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-            </svg>
-          </div>
-          <h3 class="mt-6 text-xl font-semibold text-white font-['Orbitron']">DECRYPT INTELLIGENCE</h3>
-          <p class="mt-3 text-gray-400">
-            >_ Master cryptanalysis and threat intelligence gathering techniques
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Terminal Section -->
-  <section class="py-20 terminal-bg border-t border-b border-cyan-500/20">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="bg-gray-900/80 rounded-xl overflow-hidden border border-cyan-500/30">
-        <!-- Terminal Header -->
-        <div class="bg-gray-800 px-4 py-3 flex items-center border-b border-cyan-500/20">
-          <div class="flex space-x-2">
-            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-          </div>
-          <div class="text-sm text-gray-400 ml-4">root@cyberbirds:~</div>
-        </div>
-        
-        <!-- Terminal Body -->
-        <div class="p-6 font-mono text-green-400">
-          <p class="mb-4"><span class="text-purple-400">$</span> cat about_cyberbirds.txt</p>
-          <p>>_ JHU CYBERBIRDS INITIATIVE [v3.1.5]</p>
-          <p>>_ STATUS: ACTIVE</p>
-          <p>>_ MEMBERS: 75+ ELITE OPERATIVES</p>
-          <p class="mt-4"><span class="text-purple-400">$</span> ./mission --brief</p>
-          <p>>_ TRAIN NEXT-GEN CYBER WARRIORS</p>
-          <p>>_ LEARN NETWORKING FUNDAMENTALS</p>
-          <p>>_ COMPETE IN CAPTURE-THE-FLAG COMPETITIONS</p>
-          <p>>_ SEEK INDUSTRY PARTNERSHIPS</p>
-          <p class="mt-4"><span class="text-purple-400">$</span> <span class="blink">_</span></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-br from-gray-900 to-blue-900/50">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold font-['Orbitron'] cyber-text-gradient">
-        READY TO JOIN?
-      </h2>
-      <p class="mt-4 text-xl text-cyan-200 max-w-3xl mx-auto">
-        Join 75+ undergraduate members in our cybersecurity training program
-      </p>
-      <div class="mt-8">
-        <a href="joinus.html" class="inline-block bg-gradient-to-r from-blue-500 to-teal-500 text-black px-8 py-4 rounded-md font-bold hover:from-blue-400 hover:to-teal-400 transition-all font-['Orbitron'] cyber-glow">
-          - SIGN UP HERE -
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900/90 backdrop-blur-md border-t border-cyan-500/20 pt-12 pb-8 px-6">
-    <div class="max-w-7xl mx-auto">
-      <!-- Footer Content -->
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-        <!-- About Section -->
-        <div class="col-span-1">
-          <h3 class="text-lg font-['Orbitron'] font-bold text-cyan-400 mb-4 tracking-wider">CYBERBIRDS</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            JHU's premier cybersecurity team.
-          </p>
-        </div>
-        
-        <!-- Quick Links -->
-        <div class="col-span-1">
-          <h3 class="text-lg font-['Orbitron'] font-bold text-cyan-400 mb-4 tracking-wider">QUICK LINKS</h3>
-          <ul class="space-y-3">
-            <li><a href="joinus.html" class="text-gray-400 hover:text-cyan-300 transition-colors text-sm">>_ Become a Cyberbird</a></li>
-            <li><a href="officers.html" class="text-gray-400 hover:text-cyan-300 transition-colors text-sm">>_ Command Team</a></li>
-            <li><a href="schedule.html" class="text-gray-400 hover:text-cyan-300 transition-colors text-sm">>_ 2025 Schedule</a></li>
-            <li><a href="resources.html" class="text-gray-400 hover:text-cyan-300 transition-colors text-sm">>_ Training Resources</a></li>
-          </ul>
-        </div>
-        
-        <!-- Contact -->
-        <div class="col-span-1">
-          <h3 class="text-lg font-['Orbitron'] font-bold text-cyan-400 mb-4 tracking-wider">CONTACT</h3>
-          <ul class="space-y-3">
-            <li class="text-gray-400 text-sm">>_ Hackerman Hall</li>
-            <li class="text-gray-400 text-sm">>_ Johns Hopkins University</li>
-          </ul>
-        </div>
-        
-        <!-- Social Media -->
-        <div class="col-span-1">
-          <h3 class="text-lg font-['Orbitron'] font-bold text-cyan-400 mb-4 tracking-wider">CONNECT</h3>
-          <div class="flex space-x-4">
-            <a href="https://www.linkedin.com/company/cyberbirds/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-cyan-500/20 transition-colors border border-gray-700 hover:border-cyan-400/50">
-                <svg class="w-5 h-5 text-gray-400 hover:text-cyan-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-              </a>
-            <a href="https://www.instagram.com/jhu_cyberbirds" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-cyan-500/20 transition-colors border border-gray-700 hover:border-cyan-400/50">
-              <svg class="w-5 h-5 text-gray-400 hover:text-cyan-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
-              </svg>
-            </a>
+          <div class="mt-10 flex flex-wrap gap-4 justify-center md:justify-start">
+            <a href="joinus.html" class="bg-gradient-to-r from-blue-500 to-teal-500 text-black px-8 py-3 rounded-md font-bold hover:from-blue-400 hover:to-teal-400 transition-all font-['Orbitron'] cyber-glow">ENLIST NOW</a>
+            <a href="schedule.html" class="border border-cyan-500 text-cyan-400 px-8 py-3 rounded-md font-bold hover:bg-cyan-900/30 transition-all font-['Orbitron']">VIEW MISSIONS</a>
           </div>
         </div>
       </div>
-      
-      <!-- Copyright -->
-      <div class="border-t border-gray-800 pt-8">
-        <div class="flex flex-col md:flex-row justify-center items-center">
-          <p class="text-gray-500 text-sm mb-4 md:mb-0">
-            &copy; 2025 JHU CYBERBIRDS. ALL SYSTEMS OPERATIONAL.
-          </p>
+    </section>
+
+    <section class="py-24 bg-gray-900/50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center font-['Orbitron'] cyber-text-gradient">CYBER OPERATIONS</h2>
+        <p class="mt-4 text-lg text-center text-gray-400 max-w-3xl mx-auto">// Our training program prepares operatives for real-world cyber engagements.</p>
+        
+        <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-gray-800/70 p-8 rounded-lg cyber-border hover:cyber-glow transition-all fade-up" style="animation-delay: 100ms;">
+            <div class="w-12 h-12 bg-blue-900/50 rounded-full flex items-center justify-center border border-blue-500/30">
+              <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-semibold text-white font-['Orbitron']">DEFENSE HARDENING</h3>
+            <p class="mt-3 text-gray-400">>_ Minimize vulnerabilities through offensive security drills and proactive defense.</p>
+          </div>
+          
+          <div class="bg-gray-800/70 p-8 rounded-lg cyber-border hover:cyber-glow transition-all fade-up" style="animation-delay: 200ms;">
+            <div class="w-12 h-12 bg-green-900/50 rounded-full flex items-center justify-center border border-green-500/30">
+              <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-semibold text-white font-['Orbitron']">PENETRATION TESTING</h3>
+            <p class="mt-3 text-gray-400">>_ Exploit systems using real-world attack vectors in our isolated cyber range.</p>
+          </div>
+          
+          <div class="bg-gray-800/70 p-8 rounded-lg cyber-border hover:cyber-glow transition-all fade-up" style="animation-delay: 300ms;">
+            <div class="w-12 h-12 bg-purple-900/50 rounded-full flex items-center justify-center border border-purple-500/30">
+              <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-semibold text-white font-['Orbitron']">CTF COMPETITION</h3>
+            <p class="mt-3 text-gray-400">>_ Compete in national Capture-the-Flag events against top-tier institutions.</p>
+          </div>
+          
+          <div class="bg-gray-800/70 p-8 rounded-lg cyber-border hover:cyber-glow transition-all fade-up" style="animation-delay: 400ms;">
+            <div class="w-12 h-12 bg-yellow-900/50 rounded-full flex items-center justify-center border border-yellow-500/30">
+              <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            </div>
+            <h3 class="mt-6 text-xl font-semibold text-white font-['Orbitron']">THREAT INTELLIGENCE</h3>
+            <p class="mt-3 text-gray-400">>_ Master cryptanalysis, OSINT, and intelligence gathering techniques.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <script src="script.js"></script>
-</body>
+    <section class="py-24 terminal-bg border-t border-b border-cyan-500/20">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="bg-gray-900/80 rounded-xl overflow-hidden border border-cyan-500/30 shadow-2xl shadow-cyan-500/10">
+          <div class="bg-gray-800 px-4 py-3 flex items-center border-b border-cyan-500/20">
+            <div class="flex space-x-2">
+              <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
+            <div class="text-sm text-gray-400 ml-4 font-mono">root@cyberbirds:~</div>
+          </div>
+          <div class="p-6 font-mono text-green-400 text-sm md:text-base" id="terminal">
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-gray-900/50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center font-['Orbitron'] cyber-text-gradient">BATTLE-TESTED</h2>
+        <p class="mt-4 text-lg text-center text-gray-400 max-w-3xl mx-auto">// We sharpen our skills in the world's most challenging cyber arenas.</p>
+        <div class="mt-12 flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
+          <div class="text-gray-500 font-bold text-2xl opacity-60 hover:opacity-100 transition-opacity">[ HackTheBox ]</div>
+          <div class="text-gray-500 font-bold text-2xl opacity-60 hover:opacity-100 transition-opacity">[ TryHackMe ]</div>
+          <div class="text-gray-500 font-bold text-2xl opacity-60 hover:opacity-100 transition-opacity">[ OverTheWire ]</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-gradient-to-br from-gray-900 to-blue-900/50">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold font-['Orbitron'] cyber-text-gradient">Ready to Join the Ranks?</h2>
+        <p class="mt-4 text-xl text-cyan-200 max-w-3xl mx-auto">Become part of an elite team dedicated to mastering the art of cybersecurity. All skill levels welcome.</p>
+        <div class="mt-8">
+          <a href="joinus.html" class="inline-block bg-gradient-to-r from-blue-500 to-teal-500 text-black px-10 py-4 rounded-md font-bold hover:from-blue-400 hover:to-teal-400 transition-all font-['Orbitron'] cyber-glow text-lg">- ENLIST NOW -</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900/90 backdrop-blur-md border-t border-cyan-500/20 pt-12 pb-8 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div class="col-span-1">
+            <h3 class="text-lg font-['Orbitron'] font-bold text-cyan-400 mb-4 tracking-wider">CYBERBIRDS</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">JHU's premier cybersecurity team.</p>
+          </div>
+          <div class="col-span-1">
+            <h3 class="text-lg font-['Orbitron'] font-bold text-cyan-400 mb-4 tracking-wider">QUICK LINKS</h3>
+            <ul class="space-y-3">
+              <li><a href="joinus.html" class="text-gray-400 hover:text-cyan-300 transition-colors text-sm">>_ Become a Cyberbird</a></li>
+              <li><a href="officers.html" class="text-gray-400 hover:text-cyan-300 transition-colors text-sm">>_ Command Team</a></li>
+              <li><a href="schedule.html" class="text-gray-400 hover:text-cyan-300 transition-colors text-sm">>_ 2025 Schedule</a></li>
+              <li><a href="resources.html" class="text-gray-400 hover:text-cyan-300 transition-colors text-sm">>_ Training Resources</a></li>
+            </ul>
+          </div>
+          <div class="col-span-1">
+            <h3 class="text-lg font-['Orbitron'] font-bold text-cyan-400 mb-4 tracking-wider">CONTACT</h3>
+            <ul class="space-y-3">
+              <li class="text-gray-400 text-sm">>_ Hackerman Hall</li>
+              <li class="text-gray-400 text-sm">>_ Johns Hopkins University</li>
+            </ul>
+          </div>
+          <div class="col-span-1">
+            <h3 class="text-lg font-['Orbitron'] font-bold text-cyan-400 mb-4 tracking-wider">CONNECT</h3>
+            <div class="flex space-x-4">
+              <a href="https://www.linkedin.com/company/cyberbirds/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-cyan-500/20 transition-colors border border-gray-700 hover:border-cyan-400/50"><svg class="w-5 h-5 text-gray-400 hover:text-cyan-300" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+              <a href="https://www.instagram.com/jhu_cyberbirds" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-cyan-500/20 transition-colors border border-gray-700 hover:border-cyan-400/50"><svg class="w-5 h-5 text-gray-400 hover:text-cyan-300" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683-.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/></svg></a>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8">
+          <div class="flex flex-col md:flex-row justify-center items-center">
+            <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2025 JHU CYBERBIRDS. ALL SYSTEMS OPERATIONAL.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // SCRIPT FOR TYPING EFFECT
+      document.addEventListener('DOMContentLoaded', function() {
+        const terminal = document.getElementById('terminal');
+        const lines = [
+          { cmd: true, text: "cat about_cyberbirds.txt" },
+          { cmd: false, text: ">_ JHU CYBERBIRDS INITIATIVE [v3.1.5]" },
+          { cmd: false, text: ">_ STATUS: ACTIVE" },
+          { cmd: false, text: ">_ MEMBERS: 75+ ELITE OPERATIVES" },
+          { cmd: true, text: "./mission --brief", delay: 1000 },
+          { cmd: false, text: ">_ TRAIN NEXT-GEN CYBER WARRIORS" },
+          { cmd: false, text: ">_ COMPETE IN NATIONAL CTF EVENTS" },
+          { cmd: false, text: ">_ DEVELOP REAL-WORLD SECURITY SKILLS" }
+        ];
+
+        let lineIndex = 0;
+        let charIndex = 0;
+        let currentElement = null;
+
+        function type() {
+          if (lineIndex >= lines.length) {
+            const prompt = document.createElement('p');
+            prompt.innerHTML = `<span class="text-purple-400">$</span> <span class="blinking-cursor">_</span>`;
+            terminal.appendChild(prompt);
+            return;
+          }
+
+          const line = lines[lineIndex];
+          
+          if (charIndex === 0) {
+            currentElement = document.createElement('p');
+            if (line.cmd) {
+              currentElement.innerHTML = `<span class="text-purple-400">$</span> `;
+            }
+            if (lines[lineIndex - 1]?.cmd) {
+               currentElement.classList.add('mt-4');
+            }
+            terminal.appendChild(currentElement);
+          }
+
+          const textToType = line.text;
+          if (charIndex < textToType.length) {
+            const span = currentElement.querySelector('span:last-of-type') || currentElement;
+            span.textContent += textToType[charIndex];
+            charIndex++;
+            setTimeout(type, 30); // Typing speed
+          } else {
+            lineIndex++;
+            charIndex = 0;
+            setTimeout(type, line.delay || 300); // Delay between lines
+          }
+        }
+        type();
+      });
+    </script>
+  </body>
 </html>
