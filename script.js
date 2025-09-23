@@ -1,64 +1,107 @@
-// Mobile menu functionality
+// script.js
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Mobile menu setup (same as before)
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  if (mobileMenuButton) {
-    const mobileMenu = document.createElement('div');
-    mobileMenu.className = 'hidden md:hidden bg-gray-900 shadow-lg absolute top-16 left-0 right-0 py-4 px-6 border-t border-cyan-500/20';
-    
-    const navLinks = document.querySelector('nav').cloneNode(true);
-    navLinks.className = 'flex flex-col space-y-4';
-    mobileMenu.appendChild(navLinks);
-    
-    document.querySelector('header').appendChild(mobileMenu);
-    
-    mobileMenuButton.addEventListener('click', function() {
-      mobileMenu.classList.toggle('hidden');
+  const terminal = document.getElementById('terminal');
+  const lines = [
+    { cmd: true, text: "cat about_cyberbirds.txt" },
+    { cmd: false, text: ">_ JHU CYBERBIRDS INITIATIVE [v3.1.5]" },
+    { cmd: false, text: ">_ STATUS: ACTIVE" },
+    { cmd: false, text: ">_ MEMBERS: 75+ ELITE OPERATIVES" },
+    { cmd: true, text: "./mission --brief", delay: 1000 },
+    { cmd: false, text: ">_ TRAIN NEXT-GEN CYBER WARRIORS" },
+    { cmd: false, text: ">_ COMPETE IN NATIONAL CTF EVENTS" },
+    { cmd: false, text: ">_ DEVELOP REAL-WORLD SECURITY SKILLS" },
+    { cmd: false, textParts: [" >_ sometime the intel you want isn't on the ", "screen", "..."] }
+  ];
+
+  let lineIndex = 0;
+  let charIndex = 0;
+  let currentElement = null;
+
+  function type() {
+    if (lineIndex >= lines.length) {
+      const prompt = document.createElement('p');
+      prompt.innerHTML = `<span class="text-purple-400">$</span> <span class="blinking-cursor">_</span>`;
+      terminal.appendChild(prompt);
+      attachInteraction(); // enable link interaction after typing finishes
+      return;
+    }
+
+    const line = lines[lineIndex];
+
+    if (charIndex === 0) {
+      currentElement = document.createElement('p');
+
+      // add command styling
+      if (line.cmd) {
+        currentElement.innerHTML = `<span class="text-purple-400">$ ${line.text.charAt(0) || ""}</span>`;
+      } else if (lines[lineIndex - 1]?.cmd) {
+        currentElement.classList.add('mt-4');
+      }
+
+      terminal.appendChild(currentElement);
+
+      // handle lines with textParts (screen link)
+      if (line.textParts) {
+        const before = document.createElement('span');
+        before.textContent = line.textParts[0];
+        currentElement.appendChild(before);
+
+        const a = document.createElement('a');
+        a.className = 'text-blue-300 hover:text-blue-200'; // blue without underline
+        a.id = 'screen-link';
+        a.href = '#clue';
+        a.textContent = line.textParts[1];
+        currentElement.appendChild(a);
+
+        const after = document.createElement('span');
+        after.textContent = line.textParts[2] || '';
+        currentElement.appendChild(after);
+
+        lineIndex++;
+        charIndex = 0;
+        setTimeout(type, line.delay || 400);
+        return;
+      }
+    }
+
+    if (line.text && charIndex < line.text.length) {
+      if (line.cmd) {
+        // wrap typed text in purple span for commands
+        currentElement.innerHTML = `<span class="text-purple-400">$ ${line.text.slice(0, charIndex + 1)}</span>`;
+      } else {
+        currentElement.textContent += line.text[charIndex];
+      }
+      charIndex++;
+      setTimeout(type, 30); // typing speed
+    } else {
+      lineIndex++;
+      charIndex = 0;
+      setTimeout(type, line.delay || 300);
+    }
+  }
+
+  function attachInteraction() {
+    const screenLink = document.getElementById('screen-link');
+    if (!screenLink) return;
+
+    let clicked = false;
+    screenLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (clicked) return; // block multiple clicks
+      clicked = true;
+      showClue();
+      screenLink.classList.add('pointer-events-none', 'opacity-70');
     });
   }
 
-  // Terminal animation setup
-  const terminalAnimation = document.getElementById('terminal-animation');
-  if (terminalAnimation) {
-    const terminalText = [
-      {text: "scan --network jhu.edu", delay: 1000},
-      {text: ">_ Scanning university network...", delay: 500},
-      {text: ">_ Vulnerabilities detected: 12", delay: 500},
-      {text: ">_ Critical: 3, High: 5, Medium: 4", delay: 500},
-      {text: "exploit --type sql-injection", delay: 1000},
-      {text: ">_ Attempting SQL injection...", delay: 500},
-      {text: ">_ Bypassed authentication", delay: 500},
-      {text: ">_ Gained admin privileges", delay: 500},
-      {text: "exit", delay: 2000}
-    ];
-    
-    let currentLine = 0;
-    let currentChar = 0;
-    let isDeleting = false;
-    
-    function typeTerminalText() {
-      const line = terminalText[currentLine];
-      const text = isDeleting 
-        ? line.text.substring(0, currentChar - 1)
-        : line.text.substring(0, currentChar + 1);
-      
-      terminalAnimation.textContent = text;
-      terminalAnimation.classList.remove('hidden');
-      currentChar = isDeleting ? currentChar - 1 : currentChar + 1;
-      
-      if (!isDeleting && currentChar === line.text.length) {
-        isDeleting = true;
-        setTimeout(typeTerminalText, line.delay);
-      } else if (isDeleting && currentChar === 0) {
-        isDeleting = false;
-        currentLine = (currentLine + 1) % terminalText.length;
-        setTimeout(typeTerminalText, 500);
-      } else {
-        setTimeout(typeTerminalText, isDeleting ? 50 : 100);
-      }
-    }
-    
-    // Start animation when page loads
-    setTimeout(typeTerminalText, 1500);
+  function showClue() {
+    const p = document.createElement('p');
+    p.className = 'mt-2 text-green-400';
+    p.textContent = '>_ Small hint: open DevTools (Inspect Element) or View Source and search for a comment.';
+    terminal.appendChild(p);
+    terminal.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
+
+  type();
 });

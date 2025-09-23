@@ -228,61 +228,8 @@
         </div>
       </div>
     </footer>
-
-    <script>
-      // SCRIPT FOR TYPING EFFECT
-      document.addEventListener('DOMContentLoaded', function() {
-        const terminal = document.getElementById('terminal');
-        const lines = [
-          { cmd: true, text: "cat about_cyberbirds.txt" },
-          { cmd: false, text: ">_ JHU CYBERBIRDS INITIATIVE [v3.1.5]" },
-          { cmd: false, text: ">_ STATUS: ACTIVE" },
-          { cmd: false, text: ">_ MEMBERS: 75+ ELITE OPERATIVES" },
-          { cmd: true, text: "./mission --brief", delay: 1000 },
-          { cmd: false, text: ">_ TRAIN NEXT-GEN CYBER WARRIORS" },
-          { cmd: false, text: ">_ COMPETE IN NATIONAL CTF EVENTS" },
-          { cmd: false, text: ">_ DEVELOP REAL-WORLD SECURITY SKILLS" }
-        ];
-
-        let lineIndex = 0;
-        let charIndex = 0;
-        let currentElement = null;
-
-        function type() {
-          if (lineIndex >= lines.length) {
-            const prompt = document.createElement('p');
-            prompt.innerHTML = `<span class="text-purple-400">$</span> <span class="blinking-cursor">_</span>`;
-            terminal.appendChild(prompt);
-            return;
-          }
-
-          const line = lines[lineIndex];
-          
-          if (charIndex === 0) {
-            currentElement = document.createElement('p');
-            if (line.cmd) {
-              currentElement.innerHTML = `<span class="text-purple-400">$</span> `;
-            }
-            if (lines[lineIndex - 1]?.cmd) {
-               currentElement.classList.add('mt-4');
-            }
-            terminal.appendChild(currentElement);
-          }
-
-          const textToType = line.text;
-          if (charIndex < textToType.length) {
-            const span = currentElement.querySelector('span:last-of-type') || currentElement;
-            span.textContent += textToType[charIndex];
-            charIndex++;
-            setTimeout(type, 30); // Typing speed
-          } else {
-            lineIndex++;
-            charIndex = 0;
-            setTimeout(type, line.delay || 300); // Delay between lines
-          }
-        }
-        type();
-      });
-    </script>
+    
+    <!-- FLAG{Cyberbirds_2025!} -->
+    <script src="script.js"></script>
   </body>
 </html>
