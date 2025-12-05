@@ -65,6 +65,30 @@
           transform: translateY(0);
         }
       }
+
+      /* Carousel animation */
+      .carousel-track {
+        animation: scroll 30s linear infinite;
+      }
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-66.666%);
+        }
+      }
+
+      /* Cool text styling for carousel */
+      .carousel-item {
+        font-family: 'Orbitron', sans-serif;
+        background: linear-gradient(135deg, #60a5fa 0%, #2dd4bf 50%, #a78bfa 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 30px rgba(56, 182, 255, 0.5);
+        position: relative;
+      }
     </style>
   </head>
 
@@ -169,6 +193,39 @@
     </section>
 
     <section class="py-24 bg-gray-900/50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center font-['Orbitron'] cyber-text-gradient">Our Full-Time Placements</h2>
+        <p class="mt-4 text-lg text-center text-gray-400 max-w-3xl mx-auto">// Our training prepares members for real-world cybersecurity careers.</p>
+
+        <div class="mt-12 relative overflow-hidden">
+          <div class="carousel-track flex items-center gap-20">
+            <a href="https://www.lennar.com" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">LENNAR</a>
+            <a href="https://www.lowes.com" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">LOWE'S</a>
+            <a href="https://www.northropgrumman.com" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">NORTHROP GRUMMAN</a>
+            <a href="https://www.nasa.gov" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">NASA</a>
+            <a href="https://www.ibm.com" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">IBM</a>
+            <a href="https://www.safelogic.com" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">SAFELOGIC</a>
+            <!-- Duplicate for seamless loop -->
+            <a href="https://www.lennar.com" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">LENNAR</a>
+            <a href="https://www.lowes.com" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">LOWE'S</a>
+            <a href="https://www.northropgrumman.com" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">NORTHROP GRUMMAN</a>
+            <a href="https://www.nasa.gov" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">NASA</a>
+            <a href="https://www.ibm.com" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">IBM</a>
+            <a href="https://www.safelogic.com" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">SAFELOGIC</a>
+            <!-- Third set for extra smooth looping -->
+            <a href="https://www.lennar.com" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">LENNAR</a>
+            <a href="https://www.lowes.com" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">LOWE'S</a>
+            <a href="https://www.radical.ai" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">RADICAL AI</a>
+            <a href="https://www.northropgrumman.com" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">NORTHROP GRUMMAN</a>
+            <a href="https://www.nasa.gov" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">NASA</a>
+            <a href="https://www.ibm.com" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">IBM</a>
+            <a href="https://www.safelogic.com" target="_blank" rel="noopener noreferrer" class="carousel-item flex-shrink-0 text-4xl font-bold whitespace-nowrap hover:scale-105 transition-transform">SAFELOGIC</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-gray-800/50">
       <div class="max-w-7xl mx-auto px-6">
         <h2 class="text-3xl font-bold text-center font-['Orbitron'] cyber-text-gradient">BATTLE-TESTED</h2>
         <p class="mt-4 text-lg text-center text-gray-400 max-w-3xl mx-auto">// We sharpen our skills in the world's most challenging cyber arenas.</p>
